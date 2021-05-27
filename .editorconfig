@@ -1,0 +1,27 @@
+###################################################
+#                         ____ __  __ ____        #
+#       _ __   ___  ___  / ___|  \/  / ___|       #
+#      | '_ \ / _ \/ _ \| |   | |\/| \___ \       #
+#      | | | |  __/ (_) | |___| |  | |___) |      #
+#      |_| |_|\___|\___/ \____|_|  |_|____/       #
+#                                                 #
+#                                                 #
+#      > Formatting conventions for neoCMS <      #
+#                                                 #
+# This file (`.editorconfig`) exists to help      #
+# maintain consistent formatting throughout the   #
+# development of neoCMS.                          #
+#                                                 #
+# To review what each of these options mean, see: #
+# http://editorconfig.org/                        #
+#                                                 #
+###################################################
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
