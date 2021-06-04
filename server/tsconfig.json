@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es6",
+      "es2017",
+      "esnext.asynciterable"
+    ],
+    "sourceMap": false,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "declaration": false,
+    "composite": false,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "rootDir": "src",
+    "types": [
+      "./@types"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+    ]
+  },
+  "ts-node": {
+    "files": true
+  },
+  "typedocOptions": {
+    "theme": "minimal",
+    "mergeModulesRenameDefaults": true,
+    "mergeModulesMergeMode": "module",
+    "entryPoints": [
+      "./src"
+    ],
+    "exclude": [
+      "./src/redis.ts",
+      "./src/data/!(entities|resolvers){,/**}/*.ts",
+      "./src/express/**/*.ts",
+      "./src/graphql/**/*.ts",
+      "./src/utils/data/**/*.ts"
+    ],
+    "excludeInternal": true,
+    "out": "docs",
+    "disableOutputCheck": false,
+    "readme": "./README.md",
+    "emit": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ]
+}

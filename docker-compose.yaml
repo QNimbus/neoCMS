@@ -1,0 +1,51 @@
+---
+version: '3.7'
+
+volumes: { mysql_data }
+
+services:
+  neocms:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - VARIANT=16
+    image: besquared/docker-dev-neocms
+    container_name: neocms
+    restart: always
+    environment: []
+    ports: []
+    volumes: []
+    depends_on: [db, redis]
+
+  db:
+    image: mysql:5.7
+    container_name: neocms_mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+    ports: []
+    volumes:
+      - type: volume
+        source: mysql_data
+        target: /var/lib/mysql
+        read_only: false
+
+  redis:
+    image: redis:alpine
+    container_name: neocms_redis
+    restart: always
+    environment: []
+    ports: []
+    volumes: []
+    depends_on: []
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: neocms_phpmyadmin
+    restart: always
+    environment:
+      - PMA_HOST=db
+    ports:
+      - 8080:80
+    volumes: []
